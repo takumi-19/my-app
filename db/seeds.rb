@@ -1,7 +1,39 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Stadium.create!([
+  {id: 1, stadium_name: "札幌ドーム", city: "北海道札幌市"},
+  {id: 2, stadium_name: "ユアテックスタジアム仙台", city: "宮城県仙台市"},
+  {id: 3, stadium_name: "県立カシマサッカースタジアム", city: "茨城鹿嶋市"},
+  {id: 4, stadium_name: "埼玉スタジアム2002", city: "埼玉県さいたま市"},
+  {id: 5, stadium_name: "三協フロンテア柏スタジアム", city: "千葉県柏市"},
+  {id: 6, stadium_name: "味の素スタジアム", city: "東京都"},
+  {id: 7, stadium_name: "等々力陸上競技場", city: "神奈川県川崎市"},
+  {id: 8, stadium_name: "日産スタジアム", city: "神奈川県横浜市"},
+  {id: 9, stadium_name: "ニッパツ三ツ沢球技場", city: "神奈川県横浜市"},
+  {id: 10, stadium_name: "Shonan BMW スタジアム平塚", city: "神奈川県平塚市"},
+  {id: 11, stadium_name: "IAIスタジアム日本平", city: "静岡県静岡市"},
+  {id: 12, stadium_name: "豊田スタジアム", city: "愛知県名古屋市"},
+  {id: 13, stadium_name: "パナソニックスタジアム吹田", city: "大阪府吹田市"},
+  {id: 14, stadium_name: "ヤンマースタジアム長居", city: "大阪府大阪市"},
+  {id: 15, stadium_name: "ノエビアスタジアム神戸", city: "兵庫県神戸市"},
+  {id: 16, stadium_name: "エディオンスタジアム広島", city: "広島県広島市"},
+  {id: 17, stadium_name: "駅前不動産スタジアム", city: "佐賀県鳥栖市"},
+  {id: 18, stadium_name: "昭和電工ドーム大分", city: "大分県大分市"}])
+
+Team.create!([
+  {id: 1, team_name: "北海道コンサドーレ札幌", team_logo: "j1_team_emblem/img_club_sapporo.png", team_color: "sapporo_color"},
+  {id: 2, team_name: "ベガルタ仙台", team_logo: "j1_team_emblem/img_club_sendai.png", team_color: "sendai_color"},
+  {id: 3, team_name: "鹿島アントラーズ", team_logo: "j1_team_emblem/img_club_kashima.png", team_color: "kashima_color"},
+  {id: 4, team_name: "浦和レッズ", team_logo: "j1_team_emblem/img_club_urawa.png", team_color: "urawa_color"},
+  {id: 5, team_name: "柏レイソル", team_logo: "j1_team_emblem/img_club_kashiwa.png", team_color: "kashiwa_color"},
+  {id: 6, team_name: "FC東京", team_logo: "j1_team_emblem/img_club_ftokyo.png", team_color: "ftokyo_color"},
+  {id: 7, team_name: "川崎フロンターレ", team_logo: "j1_team_emblem/img_club_kawasakif.png", team_color: "kawasaki_color"},
+  {id: 8, team_name: "横浜F・マリノス", team_logo: "j1_team_emblem/img_club_yokohamafm.png", team_color: "yokohamafm_color"},
+  {id: 9, team_name: "横浜FC", team_logo: "j1_team_emblem/img_club_yokohamafc.png", team_color: "yokohamafc_color"},
+  {id: 10, team_name: "湘南ベルマーレ", team_logo: "j1_team_emblem/img_club_shonan.png", team_color: "shonan_color"},
+  {id: 11, team_name: "清水エスパルス", team_logo: "j1_team_emblem/img_club_shimizu.png", team_color: "shimizu_color"},
+  {id: 12, team_name: "名古屋グランパス", team_logo: "j1_team_emblem/img_club_nagoya.png", team_color: "nagoya_color"},
+  {id: 13, team_name: "ガンバ大阪", team_logo: "j1_team_emblem/img_club_gosaka.png", team_color: "gosaka_color"},
+  {id: 14, team_name: "セレッソ大阪", team_logo: "j1_team_emblem/img_club_cosaka.png", team_color: "cosaka_color"},
+  {id: 15, team_name: "ヴィッセル神戸", team_logo: "j1_team_emblem/img_club_kobe.png", team_color: "kobe_color"},
+  {id: 16, team_name: "サンフレッチェ広島", team_logo: "j1_team_emblem/img_club_hiroshima.png", team_color: "hiroshima_color"},
+  {id: 17, team_name: "サガン鳥栖", team_logo: "j1_team_emblem/img_club_tosu.png", team_color: "tosu_color"},
+  {id: 18, team_name: "大分トリニータ", team_logo: "j1_team_emblem/img_club_oita.png", team_color: "oita_color"}])
