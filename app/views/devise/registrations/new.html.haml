@@ -1,0 +1,80 @@
+%body
+  .AccountPage.SignUp
+    .AccountPage__container
+      .AccountPage__title
+        %h2 新規アカウントの作成
+      .AccountPage__form
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = devise_error_messages!
+          .FormField
+            .FormField__input--normal
+              = f.text_field :name, autofocus: true, placeholder: "ユーザーネーム"
+          .FormField
+            .FormField__input--normal
+              = f.email_field :email, placeholder: "メールアドレス"
+          .FormField
+            .FormField__input--normal
+              = f.password_field :password, autocomplete: "off", placeholder: "パスワード(英数字8文字以上)"
+          .FormField
+            .FormField__input--normal
+              = f.password_field :password_confirmation, autocomplete: "off", placeholder: "確認用パスワード"
+          .FormField
+            .FormField__favoriteTeam
+              %h4 所属クラブ
+              .FormField__favoriteTeam--line
+                %label
+                  = f.radio_button(:team_id, 1)
+                  = image_tag 'j1_team_emblem/img_club_sapporo.png'
+                %label
+                  = f.radio_button(:team_id, 2)
+                  = image_tag 'j1_team_emblem/img_club_sendai.png'
+                %label
+                  = f.radio_button(:team_id, 3)
+                  = image_tag 'j1_team_emblem/img_club_kashima.png'
+                %label
+                  = f.radio_button(:team_id, 4)
+                  = image_tag 'j1_team_emblem/img_club_urawa.png'
+                %label
+                  = f.radio_button(:team_id, 5)
+                  = image_tag 'j1_team_emblem/img_club_kashiwa.png'
+                %label
+                  = f.radio_button(:team_id, 6)
+                  = image_tag 'j1_team_emblem/img_club_ftokyo.png'
+                %label
+                  = f.radio_button(:team_id, 7)
+                  = image_tag 'j1_team_emblem/img_club_kawasakif.png'
+                %label
+                  = f.radio_button(:team_id, 8)
+                  = image_tag 'j1_team_emblem/img_club_yokohamafm.png'
+                %label
+                  = f.radio_button(:team_id, 9)
+                  = image_tag 'j1_team_emblem/img_club_yokohamafc.png'
+              .FormField__favoriteTeam--line
+                %label
+                  = f.radio_button(:team_id, 10)
+                  = image_tag 'j1_team_emblem/img_club_shonan.png'
+                %label
+                  = f.radio_button(:team_id, 11)
+                  = image_tag 'j1_team_emblem/img_club_shimizu.png'
+                %label
+                  = f.radio_button(:team_id, 12)
+                  = image_tag 'j1_team_emblem/img_club_nagoya.png'
+                %label
+                  = f.radio_button(:team_id, 13)
+                  = image_tag 'j1_team_emblem/img_club_gosaka.png'
+                %label
+                  = f.radio_button(:team_id, 14)
+                  = image_tag 'j1_team_emblem/img_club_cosaka.png'
+                %label
+                  = f.radio_button(:team_id, 15)
+                  = image_tag 'j1_team_emblem/img_club_kobe.png'
+                %label
+                  = f.radio_button(:team_id, 16)
+                  = image_tag 'j1_team_emblem/img_club_hiroshima.png'
+                %label
+                  = f.radio_button(:team_id, 17)
+                  = image_tag 'j1_team_emblem/img_club_tosu.png'
+                %label
+                  = f.radio_button(:team_id, 18)
+                  = image_tag 'j1_team_emblem/img_club_oita.png'
+          = f.submit "アカウントを作成", class: 'Button CreateButton'

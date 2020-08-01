@@ -1,0 +1,5 @@
+%footer
+  .FooterButtons
+    - @teams.each do |team|
+      = link_to team_path(team) do
+        = image_tag team.team_logo, class: "FooterButton"

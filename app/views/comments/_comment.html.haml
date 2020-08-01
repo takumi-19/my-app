@@ -1,0 +1,36 @@
+- if comment.supporter == current_supporter
+  - if comment.content.present?
+    .Comment.Current{data: {comment: {id: comment.id}}}
+      .Comment__body
+        .Comment__date
+          = comment.how_long_ago
+        .Comment__text
+          %p.comment__content
+            = comment.content
+  - if comment.image.present?
+    .Comment.Current{data: {comment: {id: comment.id}}}
+      .Comment__body
+        .Comment__date
+          = comment.how_long_ago
+        .Comment__text
+          = image_tag comment.image.url, class: 'Comment__image'
+- else
+  - if comment.content.present?
+    .Comment.Other{data: {comment: {id: comment.id}}}
+      .Comment__supporterName
+        = comment.supporter.name
+      .Comment__body
+        .Comment__text
+          %p.comment__content
+            = comment.content
+        .Comment__date
+          = comment.how_long_ago
+  - if comment.image.present?
+    .Comment.Other{data: {comment: {id: comment.id}}}
+      .Comment__supporterName
+        = comment.supporter.name
+      .Comment__body
+        .Comment__text
+          = image_tag comment.image.url, class: 'Comment__image'
+        .Comment__date
+          = comment.how_long_ago

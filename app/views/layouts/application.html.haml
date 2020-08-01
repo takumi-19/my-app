@@ -1,0 +1,11 @@
+!!!
+%html
+  %head
+    %meta{content: "S.S.S.アカウントを作成、またはアカウントにログイン ― 好きなチームの試合をリアルタイムで観戦して、仲間と喜びをシェアしよう。; charset=UTF-8",name: "description",  "http-equiv" => "Content-Type"}/
+    %title SSS
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application'
+  %body
+    = yield

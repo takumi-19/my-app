@@ -1,0 +1,25 @@
+= render "layouts/header"
+.Container
+  .MatchTitle
+    .MatchTitle__matchName
+      明治安田生命Ｊ１リーグ 第
+      = @match.week
+      節
+    .MatchTitle__stadiumName
+      = @match.stadium.stadium_name
+  .MatchCard
+    = link_to room_comments_path(@hometeam_room), class: "HomeTeam Btn" do
+      .Btn__text
+        HOME TEAM
+      .Btn__teamLogo
+        = image_tag @home_team.team_logo, class: "Btn__teamLogo--home"
+      .Btn__teamName
+        = @home_team.team_name
+    = link_to room_comments_path(@awayteam_room), class: "AwayTeam Btn" do
+      .Btn__text
+        AWAY TEAM
+      .Btn__teamLogo
+        = image_tag @away_team.team_logo, class: "Btn__teamLogo--away"
+      .Btn__teamName
+        = @away_team.team_name
+= render "layouts/footer"

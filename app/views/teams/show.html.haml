@@ -1,0 +1,50 @@
+= render "layouts/header"
+.Container
+  .TeamShow
+    .LeftBox
+      = image_tag @team.team_logo, class: "LeftBox__teamLogo"
+      %h1.LeftBox__teamName
+        = @team.team_name
+      .LeftBox__homeStadium
+        %h3 Home Stadium
+        %h2
+          = @stadium.stadium_name
+      .LeftBox__homeTown
+        %h3 Home Town
+        %h2
+          = @stadium.city
+    .RightBox
+      .RoomLists
+        %h1 History
+        - @matches.each do |match|
+          - if (match.home_team_id == @team.id || match.away_team_id == @team.id) && Time.now > (match.kick_off + 60 * 60 * 2.5)
+            .RoomList
+              %h2.RoomList__stadiumName
+                - stadium = Stadium.find(match.stadium_id)
+                = stadium.stadium_name
+              - room = @rooms.find_by(match_id: match.id, team_id: @team.id)
+              = link_to room_comments_path(room) do
+                .Stadium__btn
+                  .Stadium__btn--top
+                    %p
+                      第
+                      = match.week
+                      節
+                  .Stadium__btn--bottom
+                    - home_team = @teams.find(match.home_team_id)
+                    = image_tag home_team.team_logo, class: "Btn__teamLogo--home"
+                    %span{class: "#{home_team.team_color}"}
+                    %h3.Btn__teamName--home
+                      - home_team = @teams.find(match.home_team_id)
+                      = home_team.team_name
+                    %h4.Btn__versus VS
+                    %h3.Btn__teamName--away
+                      - away_team = @teams.find(match.away_team_id)
+                      = away_team.team_name
+                    %span{class: "#{away_team.team_color}"}
+                    - away_team = @teams.find(match.away_team_id)
+                    = image_tag away_team.team_logo, class: "Btn__teamLogo--away"
+                  %h3.KickoffTime
+                    = match.kick_off.strftime("%m/%d %H:%M")
+                    KO
+= render "layouts/footer"

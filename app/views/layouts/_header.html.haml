@@ -1,0 +1,26 @@
+%header
+  = link_to root_path, class: "HeaderLodo" do
+    .HeaderLodo__left
+      S.S.S.
+    .HeaderLodo__right
+      Soccer
+      %br/
+      Supporter's
+      %br/
+      Stadium
+  .HeaderIcons
+    - if current_supporter.email == "o79.uyama.takumi@gmail.com"
+      .HeaderIcons__match
+        = link_to matches_path, class: "Icon__btn" do
+          = icon("fas", "key")
+
+    .HeaderIcons__team
+      = link_to team_path(@support_team), class: "Icon__btn" do
+        = image_tag @support_team.team_logo
+        
+    .HeaderIcons__supporter
+      = link_to supporter_path(current_supporter), class: "Icon__btn" do
+        - if current_supporter.avatar_image.present?
+          = image_tag current_supporter.avatar_image.url
+        - else
+          = image_tag "default-user-icon.jpg"

@@ -1,0 +1,64 @@
+= javascript_include_tag 'autoReload'
+= render "layouts/header"
+.CommentContainer
+  .CommentMain
+    .CommentMain__left
+      .CommentHeader
+        .CommentHeader__left
+          明治安田生命 J1 LEAGUE 第
+          = @match.week
+          節
+        .CommentHeader__right
+          vs
+          - @matchCard.each do |team|
+            - unless team.id == @room.team_id
+              = team.team_name
+      .CommentBody
+        = render @comments
+    .CommentMain__right
+      - if Time.now <= (@match.kick_off + 60 * 60 * 2.5)
+        .Animation__pattern
+      - elsif Time.now > (@match.kick_off + 60 * 60 * 2.5)
+        .MatchResult
+          .MatchResult__stabiumName
+            = @stadium.stadium_name
+          .MatchResult__top
+            - @matchCard.each do |team|
+              - if team.id == @stadium.id
+                .HomeTeam
+                  = image_tag team.team_logo, class: 'HomeTeam__logo'
+                  %h4.HomeTeam__name
+                    = team.team_name
+                %h3.versus
+                  vs
+            - @matchCard.each do |team|
+              - unless team.id == @stadium.id
+                .AwayTeam__logo
+                  = image_tag team.team_logo, class: 'AwayTeam__logo'
+                  %h4.AwayTeam__name
+                    = team.team_name
+          .MatchResult__bottom
+            .HomeTeam__score
+              %h1
+                = @match.home_team_score
+            %h2 -
+            .AwayTeam__score
+              %h1
+                = @match.away_team_score
+          %p 試合終了
+  - if Time.now > (@match.kick_off + 60 * 60 * 2.5)
+    = render "layouts/footer"
+  - elsif current_supporter.team_id == @room.team_id
+    .CommentForm
+      = form_with model: [@room, @comment], html: {class: "CommentForm__formWith"}, local: true do |f|
+        .InputBox
+          = f.text_field :content, placeholder: "Maximum number of characters is 25.", class: "InputBox__text"
+          = f.label :image do
+            = icon('fas', 'image', class: 'ImageIcon')
+            = f.file_field :image, class: 'Hidden'
+        %label
+          = icon('far', 'paper-plane', class: 'SendIcon')
+          = f.submit "Send", class: 'SendButton Hidden'
+  - else
+    = render "layouts/footer"
+    

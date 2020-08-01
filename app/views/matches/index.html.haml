@@ -1,0 +1,51 @@
+= render "layouts/header"
+.Container
+  - if current_supporter.email == "o79.uyama.takumi@gmail.com"
+    .Matches__form
+      = link_to new_match_path do
+        .NewButton.Button
+          追加
+    .Weeks
+      - 34.times do |week|
+        .Week
+          %p
+            ーー
+            第
+            = week + 1
+            節
+            ーー
+          .Matches
+            - @matches.each do |match|
+              - if match.week == week + 1
+                .MatchBox
+                  .Match
+                    .Match__top
+                      %p
+                        第
+                        = match.week
+                        節
+                      %p
+                        = match.home_team_score
+                        ー
+                        =match.away_team_score
+                    .Match__bottom
+                      - home_team = @teams.find(match.home_team_id)
+                      = image_tag home_team.team_logo, class: "TeamLogo--home"
+                      %span{class: "#{home_team.team_color}"}
+                      %h3.TeamName--home
+                        - home_team = @teams.find(match.home_team_id)
+                        = home_team.team_name
+                      %h4.Versus VS
+                      %h3.TeamName--away
+                        - away_team = @teams.find(match.away_team_id)
+                        = away_team.team_name
+                      %span{class: "#{away_team.team_color}"}
+                      - away_team = @teams.find(match.away_team_id)
+                      = image_tag away_team.team_logo, class: "TeamLogo--away"
+                    %h3.KickoffTime
+                      = match.kick_off.strftime("%m/%d %H:%M")
+                      KO
+                  .BottomBox
+                    = link_to "編集", edit_match_path(match), class: "BottomBox__btn"
+                    = link_to "削除", "/matches/#{match.id}", method: :delete, class: "BottomBox__btn"
+= render "layouts/footer"

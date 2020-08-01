@@ -1,0 +1,34 @@
+- if current_supporter == @supporter
+  = form_for(current_supporter) do |f|
+    .Edit
+      .Edit__title
+        %h2 プロフィールを編集
+        .TopButtons
+          = link_to "キャンセル", :back, class: "TopButtons__btn--left"
+          = f.submit "完了", class: "TopButtons__btn--right"
+      .Edit__form
+        %label.AvatarImage
+          - if current_supporter.avatar_image.present?
+            = image_tag current_supporter.avatar_image.url, height: '150px', width: '150px'
+            = f.file_field :avatar_image
+          - else
+            = image_tag "default-user-icon.jpg", height: '150px', width: '150px'
+            = f.file_field :avatar_image
+          .AvatarImage__icon
+            = icon("fas", "plus-circle")
+        .FormField
+          .FormField__input
+            %label.UserName
+              %h3 ユーザー名
+              .BorderBottom
+                = f.text_field :name, autofocus: true
+          .FormField__input
+            %label.EmailAddress
+              %h3 メールアドレス
+              .BorderBottom
+                = f.text_field :email
+          .FormField__input
+            %label.Biography
+              %h3 自己紹介
+              = f.text_area :biography, maxlength: 100
+      = link_to "ログアウト", destroy_supporter_session_path, method: :delete, class: "LogoutButton"

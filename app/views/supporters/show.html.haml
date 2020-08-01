@@ -1,0 +1,17 @@
+= render "layouts/header"
+.Container
+  .ProfileTop
+    = image_tag @support_team.team_logo, class: 'ProfileTop__backGround'
+    - if @supporter.avatar_image.present?
+      = image_tag @supporter.avatar_image.url, height: '150px', width: '150px', class: 'ProfileTop__image'
+    - else
+      = image_tag "default-user-icon.jpg", height: '150px', width: '150px', class: 'ProfileTop__image'
+  .ProfileMiddle
+    .ProfileMiddle__supporterName
+      = @supporter.name
+    .ProfileMiddle__biography
+      = @supporter.biography
+  - if current_supporter == @supporter
+    = link_to "プロフィールを編集", edit_supporter_path(current_supporter), class: "EditButton Button"
+    .ProfileBottom
+= render "layouts/footer"
