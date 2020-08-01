@@ -1,0 +1,150 @@
+.MatchNew__background {
+  text-decoration: none;
+}
+.Matches--opacity {
+  opacity: 0.4;
+}
+
+.Matches__form {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  form {
+    width: 100%;
+    .FormBox {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 80px;
+      z-index: 10;
+      .Form {
+        height: 50px;
+        width: 150px;
+        margin: 5px;
+      }
+    }
+  }
+  .NewButton {
+    width: 500px;
+    margin-top: 10px;
+    color: white;
+    border: 1px solid #ddd;
+    background-color: black;
+    margin: 30px;
+  }
+}
+
+.Weeks {
+  .Week {
+    padding-top: 20px;
+    p {
+      color: #cccccc;
+    }
+    .Matches {
+      display: grid;
+      grid-template-columns: 470px 470px 470px;
+      .MatchBox {
+        padding: 10px;
+        .Match {
+          color: black;
+          background-color: white;
+          border: 0.2px solid rgba(0,0,0,0.7);
+          height: 75px;
+          width: 450px;
+          padding: 0 10px;
+          border-radius: 3px;
+          position: relative;
+          text-decoration: none;
+          color: black;
+          &__top {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            line-height: 18px;
+            p {
+              color: black;
+            }
+          }
+          &__bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 52px;
+            margin-bottom: 5px;
+            img {
+              height: 100%;
+              width: 52px;
+            }
+            h3 {
+              width: 140px;
+              text-align: center;
+              font-size: 12px;
+            }
+            .Versus {
+              font-size: 8px;
+            }
+            span {
+              height: 20px;
+              width: 6px;
+            }
+          }
+          .KickoffTime {
+            font-size: 9px;
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            left: 0;
+            bottom: 2px;
+          }
+        }
+        .BottomBox {
+          padding-top: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          &__btn {
+            height: 24px;
+            width: 38px;
+            line-height: 20px;
+            text-decoration: none;
+            color: white;
+            padding: 2px;
+            margin: 0 70px;
+            border: 1px solid white;
+            border-radius: 3px;
+          }
+        }
+      }
+    }
+  }
+}
+.EditBox {
+  position: fixed;
+  top: 300px;
+  z-index: 10;
+  width: 100%;
+  .EditBox__text {
+    display: flex;
+    justify-content: center;
+    p {
+      color: #dddddd;
+      margin: 0 20px;
+    }
+  }
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .Form {
+    height: 50px;
+    width: 200px;
+    margin: 10px;
+  }
+}

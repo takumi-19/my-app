@@ -1,0 +1,52 @@
+header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  color: white;
+  background-color: black;
+  height: 60px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  .HeaderLodo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    .HeaderLodo__left {
+      line-height: 60px;
+      font-size: 45px;
+      margin-right: 10px;
+    }
+    .HeaderLodo__right {
+      font-size: 15px;
+      line-height: 15px;
+    }
+  }
+  .HeaderIcons {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 3px;
+    img {
+      text-decoration: none;
+      margin-right: 20px;
+      height: 40px;
+      width: 40px;
+    }
+    i {
+      text-decoration: none;
+      margin-right: 20px;
+      font-size: 30px;
+      color: white;
+    }
+    &__supporter {
+      img {
+        border: 1px solid #ffffff;
+        border-radius: 20px;
+      }
+    }
+  }
+}

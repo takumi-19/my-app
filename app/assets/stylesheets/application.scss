@@ -1,0 +1,18 @@
+@import "reset";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "modules/header";
+@import "modules/footer";
+@import "modules/devise";
+@import "modules/stadia";
+@import "modules/matches";
+@import "modules/rooms";
+@import "modules/supporters";
+@import "modules/comments";
+@import "modules/teams";
+@import "modules/flash";
+body {
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+  img {
+  }
+}

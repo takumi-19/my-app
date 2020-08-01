@@ -1,0 +1,134 @@
+.TeamShow {
+  height: calc(100vh - 130px);
+  width: 100vw;
+  display: flex;
+  .LeftBox {
+    color: #ffffff;
+    min-height: calc(100vh - 130px);
+    width: 50vw;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__teamLogo {
+      margin: 5px;
+    }
+    &__teamName {
+      margin: 20px 0;
+      font-size: 30px;
+      font-weight: bold;
+    }
+    &__homeStadium {
+      margin: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;  
+    }
+    &__homeTown {
+      margin: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;  
+    }
+    h2 {
+      font-size: 25px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    h3 {
+      font-size: 20px;
+      color: #aaa;
+    }
+  }
+  .RightBox {
+    overflow: scroll;
+    min-height: calc(100vh - 130px);
+    width: 50vw;
+    background-color: #222222;
+    .RoomLists {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 70px;
+      h1 {
+        color: white;
+        height: 80px;
+        width: 400px;
+        border-bottom: 0.5px solid gray;
+        text-align: center;
+        font-size: 50px;
+        line-height: 100px;
+        opacity: 0.8;
+      }
+      .RoomList {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__stadiumName {
+          color: white;
+          opacity: 0.7;
+          margin-top: 80px;
+        }
+        a {
+          text-decoration: none;
+          .Stadium__btn {
+            background-color: white;
+            border: 0.2px solid rgba(0,0,0,0.7);
+            height: 75px;
+            width: 450px;
+            padding: 0 10px;
+            border-radius: 3px;
+            position: relative;
+            color: black;
+            &--top {
+              display: flex;
+              justify-content: space-between;
+              font-size: 12px;
+              line-height: 18px;
+            }
+            &--bottom {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              height: 52px;
+              margin-bottom: 5px;
+              .Btn__teamLogo--home {
+                height: 100%;
+                width: 52px;
+              }
+              .Btn__teamName--home {
+                width: 140px;
+                text-align: center;
+                font-size: 12px;
+              }
+              .Btn__versus {
+                font-size: 8px;
+              }
+              .Btn__teamName--away {
+                width: 140px;
+                text-align: center;
+                font-size: 12px;
+              }
+              .Btn__teamLogo--away {
+                height: 100%;
+                width: 52px;
+              }
+              span {
+                height: 20px;
+                width: 6px;
+              }
+            }
+            .KickoffTime {
+              font-size: 9px;
+              width: 100%;
+              text-align: center;
+              position: absolute;
+              left: 0;
+              bottom: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
