@@ -1,5 +1,4 @@
 class TeamsController < ApplicationController
-  before_action :set_team
   before_action :set_teams
   before_action :set_stadiums
   before_action :set_support_team
@@ -8,16 +7,13 @@ class TeamsController < ApplicationController
   end
 
   def show
-    @matches = Match.all.order("kick_off DESC")
-    @stadium = Stadium.find(@team.id)
-    @rooms = Room.all
+    @team = Team.find(params[:id])
+    @matches = Match.where(home_team_id: @team.id).or(Match.where(away_team_id: @team.id)).includes(:rooms, :stadium).order("kick_off DESC")
+    @homestadium = Stadium.find(@team.id)
   end
 
   private
 
-  def set_team
-    @team = Team.find(params[:id])
-  end
   def set_teams
     @teams = Team.all
   end
