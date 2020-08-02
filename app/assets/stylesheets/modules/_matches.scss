@@ -61,12 +61,22 @@
           text-decoration: none;
           color: black;
           &__top {
-            display: flex;
-            justify-content: space-between;
+            height: 18px;
             font-size: 12px;
             line-height: 18px;
             p {
               color: black;
+            }
+            .Left {
+              float: left;
+            }
+            .Right {
+              float: right;
+            }
+            center {
+              position: absolute;
+              left: auto;
+              right: auto;
             }
           }
           &__bottom {
@@ -125,9 +135,11 @@
 }
 .EditBox {
   position: fixed;
-  top: 300px;
+  top: 250px;
   z-index: 10;
-  width: 100%;
+  padding: 50px;
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 4px;
   .EditBox__text {
     display: flex;
     justify-content: center;

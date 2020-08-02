@@ -81,10 +81,18 @@
             position: relative;
             color: black;
             &--top {
-              display: flex;
-              justify-content: space-between;
+              height: 18px;
               font-size: 12px;
               line-height: 18px;
+              .Left {
+                float: left;
+              }
+              .Right {
+                float: right;
+              }
+              center {
+                text-align: center;
+              }
             }
             &--bottom {
               display: flex;

@@ -115,10 +115,21 @@ body {
             text-decoration: none;
             color: black;
             &--top {
-              display: flex;
-              justify-content: space-between;
+              height: 18px;
               font-size: 12px;
               line-height: 18px;
+              position: relative;
+              .Left {
+                float: left;
+              }
+              .Right {
+                float: right;
+              }
+              center {
+                position: absolute;
+                left: auto;
+                right: auto;
+              }
             }
             &--bottom {
               display: flex;
