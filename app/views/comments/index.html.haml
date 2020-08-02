@@ -6,25 +6,25 @@
       .CommentHeader
         .CommentHeader__left
           明治安田生命 J1 LEAGUE 第
-          = @match.week
+          = @room.match.week
           節
         .CommentHeader__right
           vs
           - @matchCard.each do |team|
-            - unless team.id == @room.team_id
+            - unless team == @room.team
               = team.team_name
       .CommentBody
         = render @comments
     .CommentMain__right
-      - if Time.now <= (@match.kick_off + 60 * 60 * 2.5)
+      - if Time.now <= (@room.match.kick_off + 60 * 60 * 2.5)
         .Animation__pattern
-      - elsif Time.now > (@match.kick_off + 60 * 60 * 2.5)
+      - elsif Time.now > (@room.match.kick_off + 60 * 60 * 2.5)
         .MatchResult
           .MatchResult__stabiumName
-            = @stadium.stadium_name
+            = @room.match.stadium.stadium_name
           .MatchResult__top
             - @matchCard.each do |team|
-              - if team.id == @stadium.id
+              - if team.id == @room.match.stadium.id
                 .HomeTeam
                   = image_tag team.team_logo, class: 'HomeTeam__logo'
                   %h4.HomeTeam__name
@@ -32,7 +32,7 @@
                 %h3.versus
                   vs
             - @matchCard.each do |team|
-              - unless team.id == @stadium.id
+              - unless team.id == @room.match.stadium.id
                 .AwayTeam__logo
                   = image_tag team.team_logo, class: 'AwayTeam__logo'
                   %h4.AwayTeam__name
@@ -40,15 +40,15 @@
           .MatchResult__bottom
             .HomeTeam__score
               %h1
-                = @match.home_team_score
+                = @room.match.home_team_score
             %h2 -
             .AwayTeam__score
               %h1
-                = @match.away_team_score
+                = @room.match.away_team_score
           %p 試合終了
-  - if Time.now > (@match.kick_off + 60 * 60 * 2.5)
+  - if Time.now > (@room.match.kick_off + 60 * 60 * 2.5)
     = render "layouts/footer"
-  - elsif current_supporter.team_id == @room.team_id
+  - elsif current_supporter.team == @room.team
     .CommentForm
       = form_with model: [@room, @comment], html: {class: "CommentForm__formWith"}, local: true do |f|
         .InputBox
