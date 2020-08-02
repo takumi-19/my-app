@@ -15,8 +15,8 @@
           = icon("fas", "key")
 
     .HeaderIcons__team
-      = link_to team_path(@support_team), class: "Icon__btn" do
-        = image_tag @support_team.team_logo
+      = link_to team_path(current_supporter.team), class: "Icon__btn" do
+        = image_tag current_supporter.team.team_logo
         
     .HeaderIcons__supporter
       = link_to supporter_path(current_supporter), class: "Icon__btn" do

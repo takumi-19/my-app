@@ -1,7 +1,7 @@
 = render "layouts/header"
 .Container
   .ProfileTop
-    = image_tag @support_team.team_logo, class: 'ProfileTop__backGround'
+    = image_tag @supporter.team.team_logo, class: 'ProfileTop__backGround'
     - if @supporter.avatar_image.present?
       = image_tag @supporter.avatar_image.url, height: '150px', width: '150px', class: 'ProfileTop__image'
     - else
