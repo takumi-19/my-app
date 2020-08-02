@@ -8,7 +8,7 @@ class MatchesController < ApplicationController
   end
 
   def show
-    @match = Match.find(params[:id]).includes(:rooms)
+    @match = Match.find(params[:id])
     @hometeam_room = @match.rooms.find_by(team_id: @match.home_team_id)
     @awayteam_room = @match.rooms.find_by(team_id: @match.away_team_id)
   end
@@ -30,17 +30,17 @@ class MatchesController < ApplicationController
   end
 
   def edit
-    @match = Match.find(params[:id]).includes(:rooms)
+    @match = Match.find(params[:id])
   end
 
   def update
-    match = Match.find(params[:id]).includes(:rooms)
+    match = Match.find(params[:id])
     match.update(match_params)
     redirect_to matches_path
   end
 
   def destroy
-    match = Match.find(params[:id]).includes(:rooms)
+    match = Match.find(params[:id])
     match.destroy
     if match.destroy
       redirect_to matches_path
