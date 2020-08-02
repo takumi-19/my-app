@@ -8,7 +8,7 @@
           %h2.Stadium__name 
             = stadium.stadium_name
           - stadium.matches.each do |match|
-            - if (match.kick_off - 60 * 60 * 2) < Time.now && Time.now < (match.kick_off + 60 * 60 * 2.5)
+            - if Time.now < (match.kick_off + 60 * 60 * 2.5) #&& (match.kick_off - 60 * 60 * 2) < Time.now
               = link_to match_path(match), class: "Stadium__btn" do
                 = render 'stadium_btn', stadium: stadium, match: match
               - break

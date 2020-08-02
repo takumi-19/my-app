@@ -1,19 +1,16 @@
 class MatchesController < ApplicationController
 
-  before_action :set_teams
   before_action :set_stadiums
+  before_action :set_teams
   before_action :set_matches
-  before_action :set_support_team
 
   def index
   end
 
   def show
-    @match = Match.find(params[:id])
-    @home_team = Team.find(@match.home_team_id)
-    @away_team = Team.find(@match.away_team_id)
-    @hometeam_room = Room.find_by(team_id: @match.home_team_id, match_id: @match.id)
-    @awayteam_room = Room.find_by(team_id: @match.away_team_id, match_id: @match.id)
+    @match = Match.find(params[:id]).includes(:rooms)
+    @hometeam_room = @match.rooms.find_by(team_id: @match.home_team_id)
+    @awayteam_room = @match.rooms.find_by(team_id: @match.away_team_id)
   end
 
   def new
@@ -33,19 +30,17 @@ class MatchesController < ApplicationController
   end
 
   def edit
-    @match = Match.find(params[:id])
-    @home_team = Team.find(@match.home_team_id)
-    @away_team = Team.find(@match.away_team_id)
+    @match = Match.find(params[:id]).includes(:rooms)
   end
 
   def update
-    match = Match.find(params[:id])
+    match = Match.find(params[:id]).includes(:rooms)
     match.update(match_params)
     redirect_to matches_path
   end
 
   def destroy
-    match = Match.find(params[:id])
+    match = Match.find(params[:id]).includes(:rooms)
     match.destroy
     if match.destroy
       redirect_to matches_path
@@ -54,20 +49,16 @@ class MatchesController < ApplicationController
 
   private
 
-  def set_teams
-    @teams = Team.all
-  end
-
   def set_stadiums
     @stadiums = Stadium.all
   end
 
-  def set_matches
-    @matches = Match.all
+  def set_teams
+    @teams = Team.all
   end
 
-  def set_support_team
-    @support_team = Team.find(current_supporter.team_id)
+  def set_matches
+    @matches = Match.all.includes(:home_team, :away_team)
   end
 
   def match_params
