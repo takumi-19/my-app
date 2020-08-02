@@ -3,8 +3,7 @@ class StadiaController < ApplicationController
   before_action :set_support_team
 
   def index
-    @stadiums = Stadium.all
-    @matches = Match.all.order("kick_off ASC")
+    @stadiums = Stadium.all.includes(:matches)
   end
 
   def show

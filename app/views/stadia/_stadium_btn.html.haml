@@ -5,19 +5,15 @@
     = match.week
     節
 .Stadium__btn--bottom
-  - home_team = @teams.find(match.home_team_id)
-  = image_tag home_team.team_logo, class: "Btn__teamLogo--home"
-  %span{class: "#{home_team.team_color}"}
+  = image_tag match.home_team.team_logo, class: "Btn__teamLogo--home"
+  %span{class: "#{match.home_team.team_color}"}
   %h3.Btn__teamName--home
-    - home_team = @teams.find(match.home_team_id)
-    = home_team.team_name
+    = match.home_team.team_name
   %h4.Btn__versus VS
   %h3.Btn__teamName--away
-    - away_team = @teams.find(match.away_team_id)
-    = away_team.team_name
-  %span{class: "#{away_team.team_color}"}
-  - away_team = @teams.find(match.away_team_id)
-  = image_tag away_team.team_logo, class: "Btn__teamLogo--away"
+    = match.away_team.team_name
+  %span{class: "#{match.away_team.team_color}"}
+  = image_tag match.away_team.team_logo, class: "Btn__teamLogo--away"
 %h3.KickoffTime
   = match.kick_off.strftime("%m/%d %H:%M")
   KO
