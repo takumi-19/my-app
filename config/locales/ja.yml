@@ -1,6 +1,34 @@
 ---
 ja:
   activerecord:
+    attributes:
+      comment:
+        content: コメント
+        image: 画像
+      match:
+        week: 節
+        kick_off: キックオフ
+        home_team_id: ホームチーム
+        away_team_id: アウェーチーム
+        stadium_id: スタジアム
+        home_team_score: スコア（ホームチーム）
+        away_team_score: スコア（アウェーチーム）
+      player:
+      room:
+      stadium:
+        stadium_name: スタジアム名
+        city: 本拠地
+      team:
+        team_name: チーム名
+        team_logo: チームエンブレム
+        team_color: チームカラー
+    models:
+      comment: コメント
+      match: マッチ
+      player: プレーヤー
+      room: ルーム
+      stadium: スタジアム
+      team: チーム
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
