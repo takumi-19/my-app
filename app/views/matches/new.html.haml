@@ -8,7 +8,7 @@
           = f.datetime_local_field :kick_off,class: "Form"
           = f.collection_select :home_team_id, @teams, :id, :team_name, { prompt: "ホームチーム" },class: "Form"
           = f.collection_select :away_team_id, @teams, :id, :team_name, { prompt: "アウェーチーム" },class: "Form"
-          = f.collection_select :stadium_id, @stadiums, :id, :stadium_name, { prompt: "スタジアム" },class: "Form"
+          = f.collection_select :stadium_id, @stadia, :id, :stadium_name, { prompt: "スタジアム" },class: "Form"
           = f.submit "送信", class: "Form"
     = link_to matches_path, class: "MatchNew__background" do
       .Weeks.Matches--opacity

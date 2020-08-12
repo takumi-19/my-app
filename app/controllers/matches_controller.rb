@@ -1,6 +1,6 @@
 class MatchesController < ApplicationController
 
-  before_action :set_stadiums
+  before_action :set_stadia
   before_action :set_teams
   before_action :set_matches
 
@@ -49,8 +49,8 @@ class MatchesController < ApplicationController
 
   private
 
-  def set_stadiums
-    @stadiums = Stadium.all
+  def set_stadia
+    @stadia = Stadium.all
   end
 
   def set_teams
