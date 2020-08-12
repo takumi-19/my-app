@@ -7,12 +7,14 @@
         .Stadium__list
           %h2.Stadium__name 
             = stadium.stadium_name
+          .ComingSoon
+            %h1 COMING SOON
           - stadium.matches.each do |match|
-            - if Time.now < (match.kick_off + 60 * 60 * 2.5) && (match.kick_off - 60 * 60 * 2) < Time.now
+            - if Time.now <= (match.kick_off + 60 * 60 * 2.5) #&& (match.kick_off - 60 * 60 * 2) <= Time.now
               = link_to match_path(match), class: "Stadium__btn" do
                 = render 'stadium_btn', stadium: stadium, match: match
               - break
-            - elsif Time.now < (match.kick_off + 60 * 60 * 2.5)
+            - elsif Time.now <= (match.kick_off + 60 * 60 * 2.5)
               .Stadium__btn.Opacity
                 = render 'stadium_btn', stadium: stadium, match: match
               - break

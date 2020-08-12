@@ -40,15 +40,17 @@
 
 .Weeks {
   .Week {
-    padding-top: 20px;
+    padding: 10px 0;
     p {
       color: #cccccc;
+      margin-left: 40px;
     }
     .Matches {
-      display: grid;
-      grid-template-columns: 470px 470px 470px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
       .MatchBox {
-        padding: 10px;
+        padding: 10px 0;
         .Match {
           color: black;
           background-color: white;
