@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :team_id])
   end
 
-  http_basic_authenticate_with :name => ENV['admin4'], :password => ENV['add19'] if Rails.env == "production"
+  # http_basic_authenticate_with :name => ENV['admin4'], :password => ENV['add19'] if Rails.env == "production"
 
 end

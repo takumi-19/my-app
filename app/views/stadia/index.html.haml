@@ -7,9 +7,9 @@
         .Stadium__list
           %h2.Stadium__name 
             = stadium.stadium_name
-          .ComingSoon
-            %h1 COMING SOON
+          - i = 0
           - stadium.matches.each do |match|
+            - i += 1
             - if Time.now <= (match.kick_off + 60 * 60 * 2.5) && (match.kick_off - 60 * 60 * 2) <= Time.now
               = link_to match_path(match), class: "Stadium__btn" do
                 = render 'stadium_btn', stadium: stadium, match: match
@@ -18,4 +18,7 @@
               .Stadium__btn.Opacity
                 = render 'stadium_btn', stadium: stadium, match: match
               - break
+            - elsif i == stadium.matches.length
+              .ComingSoon
+                %h1 COMING SOON
 = render "layouts/footer"
