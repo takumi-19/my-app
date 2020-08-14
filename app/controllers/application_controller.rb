@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::Base
 
-  # http_basic_authenticate_with :name => ENV['admin4'], :password => ENV['add19'] if Rails.env == "production"
-
   before_action :authenticate_supporter!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
