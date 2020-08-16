@@ -57,9 +57,9 @@ Jリーグは先日より、入場者数を制限することでスタジアム�
 
 # 🎬 DEMO
 
-![sssDemo#1](https://gyazo.com/7d06cf72731a2e111f9cccbb83937ea8)
+<a href="https://gyazo.com/7d06cf72731a2e111f9cccbb83937ea8">チャットルームへの入り方</a>
 
-![sssDemo#2](https://gyazo.com/a4e223c86a702f04524fe7a91e898788)
+<a href="https://gyazo.com/a4e223c86a702f04524fe7a91e898788">メッセージの送信</a>
 
 # 💥 工夫したポイント
 
