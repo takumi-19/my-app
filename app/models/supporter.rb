@@ -9,6 +9,6 @@ class Supporter < ApplicationRecord
 
   belongs_to :team
   has_many :comments
-  has_many :room_supporters
-  has_many :rooms, through: :room_supporters
+
+  validates :team, presence: true
 end
