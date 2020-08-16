@@ -19,7 +19,7 @@
 
 ## URL
 <p>
-IPアドレス：https://soccer-supporters-stadium.herokuapp.com/<br>
+URL：https://soccer-supporters-stadium.herokuapp.com/<br>
 Github：https://github.com/takumi-19/my-app
 </p>
 
