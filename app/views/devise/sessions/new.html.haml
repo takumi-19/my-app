@@ -1,11 +1,14 @@
 %body
-  .AccountPage.LogIn
-    .AccountPage__container
+  .AccountPage
+    .AccountPage__container.LogIn
       .AccountPage__title
         %h1 S.S.S.
         %h3 enjoy your soccer life
       .AccountPage__form
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          #error_explanation
+            - flash.each do |key, value|
+              = content_tag :div, value, class: key
           .FormFields
             .FormField
               .FormField__input--normal.Email
@@ -16,6 +19,6 @@
             .FormField
               .actions
                 = f.submit "ログイン", class: 'Button LoginButton'
-          .SignupButton
-            %h3 アカウントをお持ちでないですか？
-            = render "devise/shared/links"
+      .SignupButton
+        %h3 アカウントをお持ちでないですか？
+        = render "devise/shared/links"

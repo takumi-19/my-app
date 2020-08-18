@@ -13,5 +13,6 @@
       = @supporter.biography
   - if current_supporter == @supporter
     = link_to "プロフィールを編集", edit_supporter_path(current_supporter), class: "EditButton Button"
-    .ProfileBottom
+  .ProfileBottom
+  = link_to "ログアウト", destroy_supporter_session_path, method: :delete, class: "LogoutButton"
 = render "layouts/footer"

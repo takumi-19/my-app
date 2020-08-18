@@ -3,32 +3,27 @@
   padding: 60px 0;
   min-height: 100vh;
   .AccountPage__container {
-    height: 100%;
+    min-height: calc(100vh - 120px);
     width: 700px;
     margin: 0 auto;
+    padding: 50px 0;
     background-color: rgba(255,255,255,0.95);
     border: 1px solid gray;
     border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     .AccountPage__title {
       display: flex;
       flex-direction: column;
       align-items: center;
       opacity: 0.8;
-      padding-top: 60px;
       h1 {
         font-size: 100px;
         line-height: 100px;
       }
       h2 {
         font-size: 25px;
-        margin-bottom: 30px;
       }
       h3 {
         font-size: 20px;
-        margin-bottom: 50px;
       }
     }
     .AccountPage__form {
@@ -38,7 +33,6 @@
         flex-direction: column;
         align-items: center;
         .FormFields {
-          margin-top: 30px;
           .FormField {
             margin: 17px 0px;
             display: flex;
@@ -94,38 +88,40 @@
           }
         }
       }
-      .SignupButton {
-        display: flex;
-        align-items: center;
-        margin-top: 100px;
-        justify-content: center;
-        h3 {
-          margin-right: 10px;
-          color: rgba(0,0,0,0.4);
-        }
-        a {
-          color:  #38aef0;
-          text-decoration: none;
-        }
-      }
       .CreateButton {
         color: #fff;
         background-color: #38aef0;
         width: 500px;
-        margin-top: 40px;
+      }
+    }
+    .SignupButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      h3 {
+        margin-right: 10px;
+        color: rgba(0,0,0,0.4);
+      }
+      a {
+        color:  #38aef0;
+        text-decoration: none;
       }
     }
   }
 }
 
 .LogIn {
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .SignUp {
-  .AccountPage__container {
-    padding-bottom: 53px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 .Button {
   display: inline-block;
@@ -146,17 +142,18 @@
 }
 
 #error_explanation {
-  margin: 20px 0;
   padding: 20px 30px;
   border: 1px solid #ddd;
   border-radius: 2px;
-
+  width: 500px;
+  h2 {
+    font-size: 14px;
+  }
   ul {
     margin: 0;
     padding-left: 17px;
     list-style: square;
   }
-
   li {
     margin: 0;
     padding: 0;
