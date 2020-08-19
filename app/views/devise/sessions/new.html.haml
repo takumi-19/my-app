@@ -2,8 +2,14 @@
   .AccountPage
     .AccountPage__container.LogIn
       .AccountPage__title
-        %h1 S.S.S.
-        %h3 enjoy your soccer life
+        .AccountPage__title--top
+          %h1 S.S.S.
+          .AccountPage__title--topRight
+            %h4 Soccer
+            %h4 Supporter's
+            %h4 Stadium
+        .AccountPage__title--bottom
+          %h3 enjoy your soccer life
       .AccountPage__form
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           #error_explanation
