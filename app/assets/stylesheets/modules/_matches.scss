@@ -41,9 +41,9 @@
 .Weeks {
   .Week {
     padding: 10px 0;
-    p {
-      color: #cccccc;
+    &__number {
       margin-left: 40px;
+      color: #cccccc;
     }
     .Matches {
       display: flex;
