@@ -135,7 +135,7 @@ Ruby/Ruby on Rails/PostgreSQL/Github/Heroku/Visual Studio Code
 |password|string|null: false|
 |avatar_image|string||
 |biography|text||
-|team_id|integer|null: false, foreign_key: true|
+|team_id|reference|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :team
